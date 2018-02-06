@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+奇数行显示红色 偶数行显示蓝色
+<hr>
+<ul>
+{% for hero in list %}
+    {# 判断是否能整除2 #}
+    {% if forloop.counter|divisibleby:"2" %}
+<li style="color:red">{{ forloop.counter }}:{{ hero.hname }}</li>
+    {% else %}
+    <li style="color:blue">{{ forloop.counter }}:{{ hero.hname }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+</body>
+</html>
