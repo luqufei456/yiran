@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 想把t1的显示成放大加粗 不让其自动转义 使用过滤器safe
+或者使用 autoescape 标签控制是否开启转义 off关闭 on开启
+-->
+{{ t1 }}
+<hr>
+{{ t1|safe }}
+<hr>
+{% autoescape off %}
+    {{ t1 }}
+{% endautoescape %}
+<hr>
+<!-- 并没有传t2 这里用default设置默认值 会发现没有被转义
+ 在模板中直接写入的 不会被自动转义
+ -->
+字面值：{{ t2|default:'<b>abc</b>' }}
+<hr>
+<!-- 手动转义就是自己转~ -->
+手动转义：{{ t2|default:'&lt;b&gt;abc&lt;/b&gt;' }}
+</body>
+</html>

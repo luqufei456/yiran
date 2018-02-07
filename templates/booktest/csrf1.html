@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 只有post请求才会用到csrf验证 csrf_token 用于csrf保护验证  -->
+<form action="csrf2" method="post">
+    {% csrf_token %}
+    <input type="text" name="uname"><input type="submit" value="提交">
+</form>
+</body>
+</html>
